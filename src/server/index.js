@@ -11,7 +11,6 @@ import { ServerStyleSheet } from 'styled-components'
 import routes from '../shared/routes'
 require('dotenv').config({ path: '.env' });
 
-const port = 3000;
 const app = express();
 
 app.use(express.static('build'));
@@ -75,4 +74,4 @@ app.get("*", (req, res, next) => {
 // });
 
 
-app.listen(port)
+app.listen(process.env.PORT || 3000)
