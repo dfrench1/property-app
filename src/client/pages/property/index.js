@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { checkProperty } from "../../functions/checkProperty";
+import { checkProperty } from "../../functions/CheckProperty";
 import {verifyToken} from '../../functions/VerifyToken'
 import Layout from "../../components/layout/index";
 import PropertyHome from '../../components/propertyHome/index'
