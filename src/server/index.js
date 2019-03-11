@@ -18,7 +18,6 @@ const app = express();
 app.use(express.static('build'));
 
 const db = require('../server/config/DB').uri
-console.log('DBDBD', db, 'type', typeof(db));
 mongoose.connect(db)
  .then(() => console.log('MongoDB connected…'))
  .catch(err => console.log(err))
