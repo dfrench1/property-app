@@ -25,7 +25,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "scripts": {
-    "start": "webpack -w --mode=development & nodemon server.js",
+    "start": "webpack -w --mode=development & node server.js",
     "build": "webpack --mode=production"
   },
   "dependencies": {
