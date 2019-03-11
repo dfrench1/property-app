@@ -9,7 +9,7 @@ const Nav = ({user}) => {
         <NavStyle>
           <HomeLink />
           { user 
-          ? <WelcomeUser />
+          ? <WelcomeUser user={user} />
           : <LoginLink /> }
         </NavStyle>
     );

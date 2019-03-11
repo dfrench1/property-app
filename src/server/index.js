@@ -15,8 +15,8 @@ const app = express();
 
 app.use(express.static('build'));
 
-// Connect to DB
-mongoose.connect("mongodb://localhost/properties", { useNewUrlParser: true })
+const db = require('../server/config/DB').uri
+mongoose.connect(`${db}`, { useNewUrlParser: true })
  .then(() => console.log('MongoDB connected…'))
  .catch(err => console.log(err))
 
