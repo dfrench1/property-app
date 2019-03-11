@@ -11,14 +11,13 @@ import { ServerStyleSheet } from 'styled-components'
 import routes from '../shared/routes'
 
 if (process.env.NODE_ENV == 'development') require('dotenv').config({ path: '.env' })
-//require('dotenv').config({ path: '.env' });
 
 const app = express();
 
 app.use(express.static('build'));
 
-const db = require('../server/config/DB').uri
-mongoose.connect(db)
+//const db = require('../server/config/DB').uri
+mongoose.connect(`${process.env.DB}`)
  .then(() => console.log('MongoDB connected…'))
  .catch(err => console.log(err))
 
