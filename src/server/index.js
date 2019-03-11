@@ -9,7 +9,9 @@ import serialize from "serialize-javascript"
 import App from '../client/App'
 import { ServerStyleSheet } from 'styled-components'
 import routes from '../shared/routes'
-require('dotenv').config({ path: '.env' });
+
+if (process.env.NODE_ENV !== 'production') require('dotenv').config({ path: '.env' })
+//require('dotenv').config({ path: '.env' });
 
 const app = express();
 
