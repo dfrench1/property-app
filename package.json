@@ -25,8 +25,9 @@
     "webpack-dev-server": "^3.1.10"
   },
   "scripts": {
-    "start": "webpack -w --mode=development & node server.js",
-    "build": "webpack --mode=production"
+    "dev": "webpack -w --mode=development & nodemon server.js",
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
