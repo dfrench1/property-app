@@ -10,7 +10,7 @@ import App from '../client/App'
 import { ServerStyleSheet } from 'styled-components'
 import routes from '../shared/routes'
 
-if (process.env.NODE_ENV == 'development') require('dotenv').config({ path: '.env' })
+//if (process.env.NODE_ENV == 'development') require('dotenv').config({ path: '.env' })
 
 const app = express();
 
