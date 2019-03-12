@@ -14,8 +14,8 @@ const Image = ({data}) => {
         <React.Fragment>
           <ImgStyle
             key={data._id}
-            src={process.env.S3_URL}
-            //data.images[0]
+            src={"https://s3-eu-west-1.amazonaws.com/airbnb-assets/" + "" + data.images[0]}
+           
             onLoad={onload}
           />
           <FavBtn data={data} />

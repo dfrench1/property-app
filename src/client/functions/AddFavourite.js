@@ -1,6 +1,6 @@
 export function addFavourite(data, setFave, user){
     data.user = user
-    fetch(process.env.API + "/api/favourites", {
+    fetch("/api/favourites", {
       method: 'POST',
       body: JSON.stringify(data),
       headers:{

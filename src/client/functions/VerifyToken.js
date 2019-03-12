@@ -3,7 +3,7 @@ import * as JWT from 'jwt-decode'
 export function verifyToken(window, setUser){
     let token = window.sessionStorage.getItem('jwtToken');
     if (token){
-      fetch(process.env.API + "/verifyToken", {
+      fetch("/api/verifyToken", {
         method: 'POST',
         body: JSON.stringify({token:token}),
         headers:{

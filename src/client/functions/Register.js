@@ -1,7 +1,7 @@
 export function register(e, data, setFlash, window, props){
     e.preventDefault();
     if (data){
-    fetch(process.env.API + "/api/register", {
+    fetch("/api/register", {
             method: 'POST',
             body: JSON.stringify(data),
             headers:{

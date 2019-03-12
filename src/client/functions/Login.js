@@ -1,7 +1,7 @@
 export function fetchLogin(e, data, window, props, setFlash){
     e.preventDefault();
     if (data){
-        fetch(process.env.API + "/api/login", {
+        fetch("/api/login", {
             method: 'POST',
             body: JSON.stringify(data),
             headers:{
