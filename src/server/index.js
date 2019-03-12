@@ -17,7 +17,7 @@ const app = express();
 app.use(express.static('build'));
 
 //const db = require('../server/config/DB').uri
-mongoose.connect(`${process.env.DB}`)
+mongoose.connect(process.env.DB)
  .then(() => console.log('MongoDB connected…'))
  .catch(err => console.log(err))
 
