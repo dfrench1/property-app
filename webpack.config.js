@@ -39,12 +39,10 @@ var browserConfig = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      __isBrowser__: "true"
-    }),
-    new webpack.DefinePlugin({
+      __isBrowser__: "true",
       'process.env': {
-         S3_URL: process.env.S3_URL
-      }
+        S3_URL: process.env.S3_URL
+     }
     }),
     new Dotenv({
       path: './.env',
