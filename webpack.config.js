@@ -40,12 +40,12 @@ var browserConfig = {
   plugins: [
     new webpack.DefinePlugin({
       __isBrowser__: "true",
-      'process.env': {
-        S3_URL: process.env.S3_URL,
-        JWT:process.env.JWT,
-        DB: process.env.DB,
-        API:process.env.API
-      }
+      // 'process.env': {
+      //   S3_URL: process.env.S3_URL,
+      //   JWT:process.env.JWT,
+      //   DB: process.env.DB,
+      //   API:process.env.API
+      // }
     }),
     // new Dotenv({
     //   path: './.env',
