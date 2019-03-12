@@ -9,7 +9,7 @@ import {ImgStyle, PropertyWrap, PropertyInfo} from './styled'
 const Property = ({data}) => {
     let arr=[];
     let newArray = Object.values(data.images).map(item => (
-        arr.push({gallery_image: {url: `${process.env.S3_URL}${item}`}})
+        arr.push({gallery_image: {url: `https://s3-eu-west-1.amazonaws.com/airbnb-assets/${item}`}})
     ))
     return (
         <React.Fragment>
