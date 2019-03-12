@@ -42,7 +42,7 @@ var browserConfig = {
       __isBrowser__: "true"
     }),
     new Dotenv({
-      path: './.env',
+      path: '.env',
       safe: true,
     })
   ]
