@@ -1,37 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { checkProperty } from "../../functions/CheckProperty";
-import {verifyToken} from '../../functions/VerifyToken'
-import Layout from "../../components/layout/index";
-import PropertyHome from '../../components/propertyHome/index'
-import PropTypes from "prop-types";
+import React from 'react'
+import Property from '../../components/property'
 
-function Property(props) {
-  const [data, setData] = useState(null);
-  const [user, setUser] = useState(null);
-  const [flash, setFlash] = useState(null);
-  useEffect(() => {
-      checkProperty(localStorage, props, setData, setFlash);
-      //fetchProperty(props, setData)
-      verifyToken(window, setUser)
-  }, []);
-  return (
-    // <Layout
-    //   component={
-        flash ? (
-          <React.Fragment>
-            <div>{flash}</div>
-            <Link to="/">{"Home"}</Link>
-          </React.Fragment>
-        ) : data ? (
-          <PropertyHome data={data} />
-        ) : null
-    //   }
-    //   user={user}
-    // />
-  );
-}
+const PropertyPage = (props) => (
+  <Property {...props} />
+)
 
-Property.propTypes = {};
-
-export default Property;
+export default PropertyPage

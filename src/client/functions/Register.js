@@ -1,7 +1,7 @@
 export function register(e, data, setFlash, window, props){
     e.preventDefault();
     if (data){
-    fetch("/api/register", {
+    fetch("/register", {
             method: 'POST',
             body: JSON.stringify(data),
             headers:{
@@ -13,8 +13,7 @@ export function register(e, data, setFlash, window, props){
             if (json.errors){
                 setFlash(json.errors)
             } else {
-                window.sessionStorage.setItem('jwtToken', json.token)
-                props.history.push('/')
+                props.history.push('/login')
             }
         })
         .catch(err => console.log(err)); 

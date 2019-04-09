@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const ContainerStyle = styled.section`
- color: rgb(147, 146, 146);
- padding: 1em 2em 2em 2em;
+ padding: 1em 0em 2em 0em;
  font-family: sans-serif;
  font-size: 14px;
+ margin:1em;
 `
 
 export const ContentWrap = styled.section`

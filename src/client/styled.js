@@ -2,12 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    color:black;
-    font-size: 16px
+    color:lightslategray;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    line-height:1.5em;
   }
   a {
     text-decoration:none;
-    color:black;
+    color: darkred;
   }
   input, button {
     border-radius: 4px;
@@ -31,10 +33,29 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   button {
-    background: #AAE2FB;
-    color: #2028c1;
+    background: darkred;
+    color: white;
     font-size: 14px;
-
   }
+  button:focus {
+    outline:none;
+  }
+  button:hover{
+    border:1px solid black;
+  }
+
+  select {
+    padding:0.5em;
+    min-width:316px;
+  }
+
+  .closeButtonModal {
+    top: 1px;
+    right: 1px;
+  }
+  .closeButtonModal:hover {
+    border:none !important;
+  }
+  
 
 `

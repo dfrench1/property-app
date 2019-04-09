@@ -1,18 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RegisterWidget from '../../components/registerWidget'
-import Layout from '../../components/layout/index'
+import Register from '../../components/register'
 
-const Register = props => {
+const RegisterPage = props => {
     return (
-        // <Layout component={
-            !props.user && <RegisterWidget {...props} />
-        // } user={props.user} />
+      !props.user && <Register {...props} />
     );
 };
 
-Register.propTypes = {
+RegisterPage.propTypes = {
     
 };
 
-export default Register;
+export default RegisterPage;

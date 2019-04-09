@@ -5,7 +5,7 @@ const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
 
 var browserConfig = {
-  entry: './src/client/index.js',
+  entry: ['@babel/polyfill','./src/client/index.js'],
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',

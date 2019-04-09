@@ -1,19 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Layout from '../../components/layout/index'
-import LoginWidget from '../../components/loginWidget'
+import Login from '../../components/login'
 
-const Login = props => {
+const LoginPage = props => {
     return (
-        // <Layout component={
-        !props.user && <LoginWidget {...props} />
-            
-        // } user={props.user} />
+        !props.user && <Login {...props} />            
     );
 };
 
-Login.propTypes = {
+LoginPage.propTypes = {
     
 };
 
-export default Login;
+export default LoginPage;

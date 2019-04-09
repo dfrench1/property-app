@@ -1,7 +1,8 @@
+import Cookies from 'universal-cookie';
 export function fetchLogin(e, data, window, props, setFlash){
     e.preventDefault();
     if (data){
-        fetch("/api/login", {
+        fetch("/login", {
             method: 'POST',
             body: JSON.stringify(data),
             headers:{
@@ -13,7 +14,9 @@ export function fetchLogin(e, data, window, props, setFlash){
             if (json.errors){
                 setFlash(json.errors)
             } else {
-                window.sessionStorage.setItem('jwtToken', json.token)
+                const cookies = new Cookies();
+                cookies.set('cookie-data', json.token);
+                props.setUser(json.user)
                 props.history.push('/')
             }
         })
