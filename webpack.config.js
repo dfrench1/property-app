@@ -40,10 +40,6 @@ var browserConfig = {
   plugins: [
     new webpack.DefinePlugin({
       __isBrowser__: "true"
-    }),
-    new Dotenv({
-      path: './.env',
-      safe: true,
     })
   ]
 }
@@ -69,6 +65,10 @@ var serverConfig = {
   plugins: [
     new webpack.DefinePlugin({
       __isBrowser__: "false"
+    }),
+    new Dotenv({
+      path: './.env',
+      safe: true,
     })
   ]
 }
