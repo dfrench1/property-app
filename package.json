@@ -1,5 +1,6 @@
 {
-  "name": "property-df",
+  "name": "property-app",
+  "author": "Daniel French",
   "version": "1.2.0",
   "main": "dist/main.js",
   "license": "MIT",
