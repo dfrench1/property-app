@@ -16,10 +16,17 @@ require("dotenv").config({ path: ".env" });
 
 const app = express();
 app.use(express.static("build"));
-mongoose
-  .connect(process.env.DB)
-  .then(() => console.log("MongoDB connected…"))
-  .catch(err => console.log(err));
+mongoose.connect(process.env.DB);
+//   .then(() => console.log("MongoDB connected…"))
+//   .catch(err => console.log(err));
+mongoose.connection
+  .once("open", function() {
+    console.log("Conection has been made!");
+  })
+  .on("error", function(error) {
+    console.log("Error is: ", error);
+  });
+
 app.use(
   bodyParser.urlencoded({
     extended: true
@@ -38,7 +45,7 @@ app.get("*", require("./routes/auth/index.js"), (req, res, next) => {
   const auth = req.jwtTest;
   const preloadedState = { user: auth.user };
   const store = createStore(rootReducer, preloadedState);
-  const context = {}
+  const context = {};
   const markup = renderToString(
     sheet.collectStyles(
       <Provider store={store}>
