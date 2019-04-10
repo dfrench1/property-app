@@ -65,10 +65,6 @@ var serverConfig = {
   plugins: [
     new webpack.DefinePlugin({
       __isBrowser__: "false"
-    }),
-    new Dotenv({
-      path: './.env',
-      safe: true,
     })
   ]
 }
