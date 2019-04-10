@@ -19,7 +19,7 @@ export const Tooltip = styled.span`
     padding:0.3em;
     border-radius:5px;
     width:200px;
-    top:0;
+    top:-6em;
     :hover {
       opacity:0 !important;
     }

@@ -17,11 +17,9 @@ require("dotenv").config({ path: ".env" });
 const app = express();
 app.use(express.static("build"));
 mongoose.connect(process.env.DB, {useNewUrlParser: true});
-//   .then(() => console.log("MongoDB connected…"))
-//   .catch(err => console.log(err));
 mongoose.connection
   .once("open", function() {
-    console.log("Conection has been made!");
+    console.log("Connected to DB!");
   })
   .on("error", function(error) {
     console.log("Error is: ", error);

@@ -79,6 +79,7 @@ function PropertyList({
           />
         </td>
         </tr>
+        {delImgModal && editData._id == el._id &&
         <DeleteImages
           delImgModal={delImgModal}
           setImgModal={setImgModal}
@@ -88,7 +89,7 @@ function PropertyList({
           el={el}
           handleSelectImage={handleSelectImage}
           handleDeleteImages={handleDeleteImages}
-        /> 
+        /> }
         </React.Fragment>
   );
 }

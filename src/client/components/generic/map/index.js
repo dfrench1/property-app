@@ -28,7 +28,7 @@ class GoogleMapContainer extends Component {
     }
     const script = document.createElement('script')
     script.type = 'text/javascript'
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_KEY}&libraries=places`
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyB8pcuOTWebMzxwpa6leAmqvHFmvHqA-gk&libraries=places`
     script.id = 'google-maps-script'
     document.querySelector('head').appendChild(script)
   }

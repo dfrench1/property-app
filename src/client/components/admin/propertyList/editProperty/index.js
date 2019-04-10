@@ -26,7 +26,7 @@ const EditProperty = ({
           color="darkred"
         />
       </section>
-      {modal && (
+      {modal && editData._id == el._id && (
         <Modal
           trigger={modal}
           triggerFunc={setModal}

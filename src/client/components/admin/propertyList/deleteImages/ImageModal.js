@@ -17,8 +17,6 @@ function DeleteImages({
 }) {
   const [selected, setSelected] = useState([])
   return (
-    delImgModal &&
-    editData.images.length && (
       <Modal
         trigger={delImgModal}
         triggerFunc={setImgModal}
@@ -64,7 +62,6 @@ function DeleteImages({
           </ModalWrap>
         }
       />
-    )
   );
 }
 

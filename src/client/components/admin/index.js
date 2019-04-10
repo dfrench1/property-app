@@ -113,7 +113,7 @@ function Admin(props) {
       />
 
       <h4>Your current properties</h4>
-      <div style={{overflowX:'auto'}}>
+      <div>
       <TableStyle>
       <tbody>
       <tr>
