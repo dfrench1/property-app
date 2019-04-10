@@ -5,7 +5,7 @@ import {SearchStyle} from './styled'
 function Search ({searchMethod}) {
     return (
           <SearchStyle
-            placeholder="Search"
+            placeholder="Search by title"
             onChange={(e) => searchMethod({type: 'search', input: e.target.value})}
           />
     );

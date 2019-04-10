@@ -126,7 +126,11 @@ function Admin(props) {
               size="23" 
               color="darkred"    
             />
-            <Tooltip className="tooltip">Type - <i>jpg, jpeg, gif, or png.</i> <br /> Recommended: <br /> Aspect Ratio - <i>3:2</i></Tooltip>
+            <Tooltip className="tooltip">
+             Type - <i>jpg, jpeg, gif, or png.</i>
+             <br /> Recommended: <br /> Aspect Ratio - <i>3:2</i>
+             <br /> <i>Please allow a few minutes for image approval and processing</i>
+            </Tooltip>
           </InfoWrap>
         </th>
         <th>Delete Images</th>

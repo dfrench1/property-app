@@ -7,7 +7,7 @@ margin:auto;
 
         display: inline-flex;
         flex-wrap:wrap;
-        justify-content: center;
+        justify-content: flex-start;
     }
 `
 

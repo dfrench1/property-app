@@ -13,7 +13,6 @@ export function deleteImage(el, editData, props, delImg){
       })
       .then(res => res.json())
       .then(json => {
-        console.log('deleted imgs', json)
         delImg(json)
       })
       .catch(err => console.log(err))

@@ -38,6 +38,9 @@ const AddProperty = ({
             />
             <input
               placeholder="rooms"
+              type="number"
+              min="1"
+              max="10"
               onChange={e => {
                 setData({ ...data, rooms: e.target.value });
               }}

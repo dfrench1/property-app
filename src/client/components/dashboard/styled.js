@@ -10,6 +10,9 @@ export const ContainerStyle = styled.section`
 export const ContentWrap = styled.section`
     display:flex;
     flex-wrap:wrap;
+    @media (min-width: 767px) {
+        margin-left:3em;
+    }
     @media (min-width: 1000px) {
         display:inline-flex;
         flex-wrap:nowrap;
@@ -35,7 +38,7 @@ export const SideBarWrap = styled.aside`
         width: 350px;
     }
     @media (min-width: 1000px) {
-        margin-right:3em;
+        margin-right:5em;
 
         span:first-of-type {
             left:3% !important;
