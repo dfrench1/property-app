@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import FavBtn from "../../favouritesBtn";
 import { ImgStyle } from "./styled";
-import FadeIn from "react-lazyload-fadein";
 const CardImage = ({ data }) => {
   return (
         <React.Fragment>

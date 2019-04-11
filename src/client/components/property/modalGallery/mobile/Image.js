@@ -2,7 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const GalleryImg = ({ item, method }) => (
-  <img src={item.gallery_image.url} onClick={() => method()} />
+  <img 
+    src={item.gallery_image.url} 
+    onClick={() => method()} 
+    style={{backgroundColor:'lightgrey'}}
+    />
 );
 
 GalleryImg.propTypes = {

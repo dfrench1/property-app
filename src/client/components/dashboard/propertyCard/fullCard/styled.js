@@ -8,7 +8,7 @@ margin:auto;
     color: black;
   }
   margin: 1em 1em 1em 0;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   flex-wrap: wrap;
   position: relative;

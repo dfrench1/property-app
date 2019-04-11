@@ -23,4 +23,5 @@ export const ImgStyle = styled.img`
     width: 335px;
     height: 220px;
     margin: auto auto 0.5em auto;
+    background-color: lightgrey;
 `
