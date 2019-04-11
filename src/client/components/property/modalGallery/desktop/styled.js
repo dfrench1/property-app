@@ -24,4 +24,5 @@ export const ImgStyle = styled.img`
     height: 220px;
     margin: auto auto 0.5em auto;
     background-color: #E9E9E9;
+    cursor: pointer;
 `
