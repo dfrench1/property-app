@@ -5,7 +5,7 @@ const GalleryImg = ({ item, method }) => (
   <img 
     src={item.gallery_image.url} 
     onClick={() => method()} 
-    style={{backgroundColor:'lightgrey'}}
+    style={{backgroundColor:'#E9E9E9'}}
     />
 );
 
