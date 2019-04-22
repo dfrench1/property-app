@@ -1,28 +1,32 @@
 import React, { useState, useEffect } from "react";
-import { fetchLogin } from "../../functions/Login";
-import { FormStyle, FormWrap } from "./styled";
+import { newPassword } from "../../functions/NewPassword";
+import { FormStyle, FormWrap } from "../login/styled";
+import { setRedirectFlash } from "../../redux/actions";
 import { connect } from "react-redux";
-import { setUser, setRedirectFlash } from "../../redux/actions";
-import { Link } from "react-router-dom";
+import { withRouter } from 'react-router-dom'
 import Flash from "../generic/flashMessages";
-function Login(props) {
+function NewPassword(props) {
   const [data, setData] = useState(null);
+  const [token, setToken] = useState(null);
   const [flash, setFlash] = useState(null);
 
+  useEffect(() => {
+    fetch(`/new-password/${props.match.params.token}`)
+    .then(res => res.json())
+    .then(json => {
+      setToken(json)
+    })
+    .catch(err => console.log(err))
+  }, [])
+
   const handleSubmit = e => {
-    fetchLogin(e, data, props, setFlash);
+    newPassword(e, data, props, token, setFlash);
   };
 
   return (
     <FormWrap>
-      <h4>Login</h4>
+      <h4>New Password</h4>
       <FormStyle onSubmit={handleSubmit}>
-        <input
-          placeholder="email"
-          onChange={e => {
-            setData({ ...data, email: e.target.value });
-          }}
-        />
         <input
           placeholder="password"
           onChange={e => {
@@ -30,8 +34,6 @@ function Login(props) {
           }}
         />
         <button id="submit">submit</button>
-        <Link to="/register">Register</Link>
-        <div><Link to="/reset">Reset Password</Link></div>
 
         {flash && flash.map(el => <Flash message={el.message} key={el} />)}
       </FormStyle>
@@ -41,12 +43,11 @@ function Login(props) {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setUser: user => dispatch(setUser(user)),
     setRedirectFlash: message => dispatch(setRedirectFlash(message))
   };
 };
 
-export default connect(
+export default withRouter(connect(
   null,
   mapDispatchToProps
-)(Login);
+)(NewPassword));

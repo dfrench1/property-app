@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Route, Switch } from "react-router-dom";
 import routes from '../shared/routes'
 import Layout from './components/layout'
+import Flash from './components/layout/FlashHeader'
 import NoMatch from './pages/noMatch'
 import { withRouter } from 'react-router-dom'
 import {GlobalStyle} from './styled'
@@ -16,6 +17,7 @@ function App(props) {
  
   return (
         <Layout user={auth ? auth : reduxUser ? reduxUser : null} setAuth={setAuth} >
+        <Flash />
         <GlobalStyle />
         <Switch location={props.location}>
           {routes.map(({ path, exact, component: Component, ...rest }) => (

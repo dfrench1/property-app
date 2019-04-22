@@ -1,21 +1,18 @@
-export function register(e, data, setFlash, props){
+import Cookies from 'universal-cookie';
+export function newPassword(e, data, props, token, setFlash){
     e.preventDefault();
     if (data){
-    fetch("/register", {
+        fetch("/new-password", {
             method: 'POST',
-            body: JSON.stringify(data),
+            body: JSON.stringify({data: data, token: token}),
             headers:{
                 'Content-Type': 'application/json'
             }
         })
         .then(res => res.json())
         .then(json => {
-            if (json.errors){
-                setFlash(json.errors)
-            } else {
-                props.setRedirectFlash('You are now registered')
-                props.history.push('/login')
-            }
+            props.setRedirectFlash('Password updated')
+            props.history.push('/login')
         })
         .catch(err => console.log(err)); 
     } else {

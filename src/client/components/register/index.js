@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { register } from "../../functions/Register";
 import { FormStyle, FormWrap } from "./styled";
+import { connect } from "react-redux";
+import { setRedirectFlash } from "../../redux/actions";
 import Flash from "../generic/flashMessages";
 
 function SignUp(props) {
@@ -8,7 +10,7 @@ function SignUp(props) {
   const [flash, setFlash] = useState(null);
 
   const handleSubmit = e => {
-    register(e, data, setFlash, window, props);
+    register(e, data, setFlash, props);
   };
 
   return (
@@ -55,4 +57,14 @@ function SignUp(props) {
   );
 }
 
-export default SignUp;
+const mapDispatchToProps = dispatch => {
+  return {
+    setRedirectFlash: message => dispatch(setRedirectFlash(message))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(SignUp);
+

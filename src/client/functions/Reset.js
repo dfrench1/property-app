@@ -1,7 +1,7 @@
-export function register(e, data, setFlash, props){
+export function reset(e, data, props, setFlash){
     e.preventDefault();
     if (data){
-    fetch("/register", {
+        fetch("/reset", {
             method: 'POST',
             body: JSON.stringify(data),
             headers:{
@@ -13,7 +13,6 @@ export function register(e, data, setFlash, props){
             if (json.errors){
                 setFlash(json.errors)
             } else {
-                props.setRedirectFlash('You are now registered')
                 props.history.push('/login')
             }
         })

@@ -1,5 +1,5 @@
 import Cookies from 'universal-cookie';
-export function fetchLogin(e, data, window, props, setFlash){
+export function fetchLogin(e, data, props, setFlash){
     e.preventDefault();
     if (data){
         fetch("/login", {
@@ -17,6 +17,7 @@ export function fetchLogin(e, data, window, props, setFlash){
                 const cookies = new Cookies();
                 cookies.set('cookie-data', json.token);
                 props.setUser(json.user)
+                props.setRedirectFlash('You are now logged in')
                 props.history.push('/')
             }
         })

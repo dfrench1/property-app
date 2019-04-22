@@ -15,3 +15,15 @@ export const ContentWrap = styled.section`
         flex-wrap:nowrap;
     }
 `
+
+export const FlashStyle = styled.section`
+    background: darkred;
+    color: white;
+    max-width: 200px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.5em;
+    position: absolute;
+    top: 3.4em;
+    left: 4em;
+`

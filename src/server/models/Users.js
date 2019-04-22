@@ -24,7 +24,9 @@ const userSchema = new Schema({
     admin: {
       type: Boolean,
       default: false
-    }
+    },
+    resetToken: String,
+    resetExpiration: Date
 
 })
 
