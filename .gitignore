@@ -2,3 +2,4 @@
 .env
 /build
 *.server.js
+server.js
